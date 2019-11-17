@@ -1,0 +1,66 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+ERP
+{% endblock %}
+
+{% block content %}
+        <!-- page content -->
+<div class="right_col" role="main" style="min-height: 942px;">
+  <!-- top tiles -->
+  <div class="row tile_count">
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      <span class="count_top"><i class="fa fa-user"></i> 员工人数</span>
+      <div class="count">{{staff_num}}</div>
+    </div>
+<!--    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">-->
+<!--      <span class="count_top"><i class="fa fa-clock-o"></i> 待处理订单</span>-->
+<!--      <div class="count red">123.50</div>-->
+<!--    </div>-->
+<!--    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">-->
+<!--      <span class="count_top"><i class="fa fa-tags"></i> 已处理订单</span>-->
+<!--      <div class="count green">2,500</div>-->
+<!--    </div>-->
+  </div>
+  <!-- /top tiles -->
+
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="x_panel fixed_height_390">
+                <div class="x_title">
+                  <h2>员工名片</h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <div class="alert alert-info alert-dismissible fade in">
+                    <h3><strong>id</strong>:{{staff_name}}</h3>
+                  </div>
+                  <div class="alert alert-warning alert-dismissible fade in">
+                    <h3><strong>权限</strong>:{{staff_role}}</h3>
+                  </div>
+                </div>
+    </div>
+      </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="x_panel fixed_height_390">
+                <div class="x_title">
+                  <h2>任务情况</h2>
+                  <div class="clearfix"></div>
+                </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="x_panel fixed_height_390">
+                <div class="x_title">
+                  <h2>通知信息</h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  </div>
+
+                </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

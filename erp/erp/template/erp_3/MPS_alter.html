@@ -1,0 +1,69 @@
+{% extends "frame.html" %}
+{% block title %}
+MPS信息
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+<div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>MPS信息 </h2>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="detail" class="form-horizontal form-label-left" method="post" name="detail">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id">id
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="id" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12" name="id" value="{{mps.id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">名称
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12" value="{{mps.name}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="s_time">起始时间
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="date" id="s_time" name="start_time" required="required" class="form-control col-md-7 col-xs-12" value="{{mps.start_time}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="e_time">结束时间
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="date" id="e_time" name="end_time" required="required" class="form-control col-md-7 col-xs-12" value="{{mps.end_time}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <a class="btn btn-sm btn-success btn-block" href="{% url 'product_add' mps.id %}">增加产品</a>
+                        </div>
+                      </div>
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+						  <button class="btn btn-primary" type="reset">重置</button>
+                          <button class="btn btn-success" type="submit">保存</button>
+                          <a class="btn btn-success" href="{% url 'MPS_detail' mps.id %}">返回</a>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+{% endblock %}

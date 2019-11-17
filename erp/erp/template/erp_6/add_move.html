@@ -1,0 +1,51 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+增加
+{% endblock %}
+
+{% block content %}
+<div class="right_col" role="main">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+
+                  <div class="x_title">
+                    <h2>新增移库信息<small>需要人员管理权限</small></h2>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="x_content">
+                    <br>
+                    <form id="add" name="add" class="form-horizontal form-label-left" method="post" action=".">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="out_location">出库库位
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="out_location" required="required" class="form-control col-md-7 col-xs-12" name="out_location">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="in_location">入库库位
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="in_location" required="required" class="form-control col-md-7 col-xs-12" name="in_location">
+                        </div>
+                      </div>
+
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <a class="btn btn-primary" href="{% url 'Move' %}">取消</a>
+						    <button class="btn btn-primary" type="reset">重置</button>
+                            <button type="submit" class="btn btn-success">提交</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+增加
+{% endblock %}
+
+{% block content %}
+<div class="right_col" role="main">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+
+                  <div class="x_title">
+                    <h2>新增仓库信息<small>需要人员管理权限</small></h2>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="x_content">
+                    <br>
+                    <form id="add" name="add" class="form-horizontal form-label-left" method="post" action=".">
+
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="WMS_id">仓库编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="WMS_id" required="required" class="form-control col-md-7 col-xs-12" name="WMS_id" value="{{wms.WMS_id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="location">库位
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="location" required="required" class="form-control col-md-7 col-xs-12" name="location" value="{{wms.location}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="goods_id">物料编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="goods_id" name="goods_id" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.goods_id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="goods_name">物料名称
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="goods_name" name="goods_name" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.goods_name}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="norms">物料规格
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="norms" name="norms" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.norms}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="volume">容量
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="volume" name="volume" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.volume}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="employ">占用量
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="employ" name="employ" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.employ}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ratio">占比
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="ratio" name="ratio" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.ratio}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="charger_id">管理人员编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="charger_id" name="charger_id" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.charger_id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="charger_name">管理人员姓名
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="charger_name" name="charger_name" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.charger_name}}">
+                        </div>
+                      </div>
+
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <a class="btn btn-primary" href="{% url 'WMS' %}">取消</a>
+						    <button class="btn btn-primary" type="reset">重置</button>
+                            <button type="submit" class="btn btn-success">提交</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+{% endblock %}

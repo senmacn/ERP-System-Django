@@ -1,0 +1,186 @@
+{% extends "frame.html" %}
+{% block title %}
+订单信息
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+<div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>订单信息 </h2>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="detail" class="form-horizontal form-label-left" method="post" name="detail">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="app_id">申请单编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="app_id" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12" name="app_id" value="{{app.app_id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="io">出/入
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="io" name="io" required="required" class="form-control col-md-7 col-xs-12" value="{{app.io}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="goods_id">物料编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="goods_id" name="goods_id" required="required" class="form-control col-md-7 col-xs-12" value="{{app.goods_id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="goods_name">物料名称
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="goods_name" name="goods_name" required="required" class="form-control col-md-7 col-xs-12" value="{{app.goods_name}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="norms">物料规格
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="norms" name="norms" required="required" class="form-control col-md-7 col-xs-12" value="{{app.norms}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="demand">需求量
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="demand" name="demand" required="required" class="form-control col-md-7 col-xs-12" value="{{app.demand}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="demand_io">实际量
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="demand_io" name="demand_io" required="required" class="form-control col-md-7 col-xs-12" value="{{app.demand_io}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="unit">单位
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="unit" name="unit" required="required" class="form-control col-md-7 col-xs-12" value="{{app.unit}}">
+                        </div>
+                      </div>
+
+{#                      <div class="form-group">#}
+{#                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="date_app">申请日期#}
+{#                        </label>#}
+{#                        <div class="col-md-6 col-sm-6 col-xs-12">#}
+{#                          <input type="date" id="date_app" name="date_app" class="form-control col-md-7 col-xs-12" value="{{app.date_app}}">#}
+{#                        </div>#}
+{#                      </div>#}
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="date_io">操作日期
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="date" id="date_io" name="date_io" required="required" class="form-control col-md-7 col-xs-12" value="{{app.date_io}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="applicant_id">申请人编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="applicant_id" name="applicant_id" required="required" class="form-control col-md-7 col-xs-12" value="{{app.applicant_id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="applicant_name">申请人姓名
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="applicant_name" name="applicant_name" required="required" class="form-control col-md-7 col-xs-12" value="{{app.applicant.name}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="applicant_tel">申请人电话
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="applicant_tel" name="applicant_tel" required="required" class="form-control col-md-7 col-xs-12" value="{{app.applicant.phone_number}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="applicant_depart">申请人部门
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="applicant_depart" name="applicant_depart" required="required" class="form-control col-md-7 col-xs-12" value="{{app.applicant.department}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="charger_id">管理人员编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="charger_id" name="charger_id" required="required" class="form-control col-md-7 col-xs-12" value="{{app.charger_id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="charger_name">管理人员姓名
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="charger_name" name="charger_name" required="required" class="form-control col-md-7 col-xs-12" value="{{app.charger.name}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="state">确认状态
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="state" name="state" required="required" class="form-control col-md-7 col-xs-12" value="{{app.state}}">
+                        </div>
+                      </div>
+
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-danger" type="button" onclick="act2()">删除</button>
+						  <button class="btn btn-primary" type="reset">重置</button>
+                          <button class="btn btn-success" type="button" onclick="act1()">保存</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+
+<script>
+    function act1(){
+        document.detail.action="{% url 'appDetail' app.app_id%}";
+        document.detail.submit();
+    }
+
+    function act2(){
+        document.detail.action="{% url 'appDelete'%}";
+        var r = confirm('确认删除');
+        if (r == true){
+          document.detail.submit();
+        }
+        else{
+          pass;
+        }
+    }
+</script>
+{% endblock %}

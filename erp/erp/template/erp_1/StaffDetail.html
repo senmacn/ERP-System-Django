@@ -1,0 +1,168 @@
+{% extends "frame.html" %}
+{% block title %}
+人员信息
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+<div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>员工信息 </h2>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="detail" class="form-horizontal form-label-left" method="post" name="detail">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id">id
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="id" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12" name="id" value="{{staff.id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">姓名
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12" value="{{staff.name}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="department">部门
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select form="detail" id="department" class="form-control select2_group" required="" name="department">
+                              <option value="{{staff.department}}">{{staff.department}}</option>
+                              {% for department in departments %}
+                              <option value="{{department.name}}">{{department.name}}</option>
+                              {% endfor %}
+                            </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">性别</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          {% if gender_flag %}
+                          <input type="radio" class="flat" name="gender" checked="True" value="男" /> 男
+                          <input type="radio" class="flat" name="gender" value="女" /> 女
+                          {% else %}
+                          <input type="radio" class="flat" name="gender" value="男" /> 男
+                          <input type="radio" class="flat" name="gender" checked="True" value="女" /> 女
+                          {% endif %}
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">在职情况</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          {% if staff.on_the_job %}
+                          <input type="radio" class="flat" name="on_the_job" checked="True" value="True" /> 在职
+                          <input type="radio" class="flat" name="on_the_job" value="False" /> 未在职
+                          {% else %}
+                          <input type="radio" class="flat" name="on_the_job" value="True" /> 在职
+                          <input type="radio" class="flat" name="on_the_job" checked="True" value="False" /> 未在职
+                          {% endif %}
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">工龄</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="seniority" class="form-control col-md-7 col-xs-12" required="required" type="text" name="seniority" value="{{staff.seniority}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">学历
+                          </label>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                          <input type="text" name="qualification" class="form-control" value="{{staff.qualification}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">民族
+                          </label>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                          <input type="text" name="nation" class="form-control" value="{{staff.nation}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">籍贯
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="native_place" class="form-control" value="{{staff.native_place}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-6 col-xs-6">职务
+                          </label>
+                        <div class="col-md-4 col-xs-6">
+                          <input type="text" name="post" class="form-control" value="{{staff.post}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-xs-6">行政级别
+                          </label>
+                        <div class="col-md-4 col-xs-6">
+                          <input type="text" name="level" class="form-control" value="{{staff.level}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md- col-sm-3 col-xs-12">联系方式
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="phone_number" class="form-control" value="{{staff.phone_number}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">邮箱
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="email" name="mail" class="form-control" value="{{staff.mail}}">
+                        </div>
+                      </div>
+
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-danger" type="button" onclick="act2()">删除</button>
+						  <button class="btn btn-primary" type="reset">重置</button>
+                          <button class="btn btn-success" type="button" onclick="act1()">保存</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+
+<script>
+    function act1(){
+        document.detail.action="{% url 'StaffDetail' staff.id%}";
+        document.detail.submit();
+    }
+
+    function act2(){
+        document.detail.action="{% url 'StaffDelete'%}";
+        var r = confirm('确认删除');
+        if (r == true){
+          document.detail.submit();
+        }
+        else{
+          pass;
+        }
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,179 @@
+{% extends "frame.html" %}
+{% block title %}
+盘点信息
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+<div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>盘点信息 </h2>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="detail" class="form-horizontal form-label-left" method="post" name="detail">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id">编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="id" required="required" class="form-control col-md-7 col-xs-12" name="id" value="{{check.id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="goods_id">物料编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="goods_id" required="required" class="form-control col-md-7 col-xs-12" name="goods_id" value="{{check.goods_id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="goods_name">物料名称
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="goods_name" required="required" class="form-control col-md-7 col-xs-12" name="goods_name" value="{{check.goods_name}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="norms">规格
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="norms" required="required" class="form-control col-md-7 col-xs-12" name="norms" value="{{check.norms}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="characteristic">特性
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="characteristic" required="required" class="form-control col-md-7 col-xs-12" name="characteristic" value="{{check.characteristic}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="date">日期
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="date" id="date" required="required" class="form-control col-md-7 col-xs-12" name="date" value="{{check.date}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="value">价值
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="value" required="required" class="form-control col-md-7 col-xs-12" name="value" value="{{check.value}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="order_point">订货点
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="order_point" required="required" class="form-control col-md-7 col-xs-12" name="order_point" value="{{check.order_point}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="pur">是否外购
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="pur" required="required" class="form-control col-md-7 col-xs-12" name="pur" value="{{check.pur}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="state">状态
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="state" required="required" class="form-control col-md-7 col-xs-12" name="state" value="{{check.state}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="stock_now">现有库存
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="stock_now" required="required" class="form-control col-md-7 col-xs-12" name="stock_now" value="{{check.stock_now}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="stock_way">在途库存
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="stock_way" required="required" class="form-control col-md-7 col-xs-12" name="stock_way" value="{{check.stock_way}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="stock_secure">安全库存
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="stock_secure" required="required" class="form-control col-md-7 col-xs-12" name="stock_secure" value="{{check.stock_secure}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="stock_real">实际库存
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="stock_real" required="required" class="form-control col-md-7 col-xs-12" name="stock_real" value="{{check.stock_real}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="stock_free">可用库存
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="stock_free" required="required" class="form-control col-md-7 col-xs-12" name="stock_free" value="{{check.stock_free}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="unit">单位
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="unit" required="required" class="form-control col-md-7 col-xs-12" name="unit" value="{{check.unit}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="charger_id">管理人员编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="charger_id" required="required" class="form-control col-md-7 col-xs-12" name="charger_id" value="{{check.charger_id}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="charger_name">管理人员姓名
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="charger_name" required="required" class="form-control col-md-7 col-xs-12" name="charger_name" value="{{check.charger_name}}">
+                        </div>
+                      </div>
+
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-danger" type="button" onclick="act2()">删除</button>
+						  <button class="btn btn-primary" type="reset">重置</button>
+                          <button class="btn btn-success" type="button" onclick="act1()">保存</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+
+<script>
+    function act1(){
+        document.detail.action="{% url 'checkDetail' check.id%}";
+        document.detail.submit();
+    }
+
+    function act2(){
+        document.detail.action="{% url 'checkDelete'%}";
+        var r = confirm('确认删除');
+        if (r == true){
+          document.detail.submit();
+        }
+        else{
+          pass;
+        }
+    }
+</script>
+{% endblock %}

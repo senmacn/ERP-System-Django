@@ -1,0 +1,48 @@
+{% extends "frame.html" %}
+{% block title %}
+产品计划信息
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+<div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>产品计划信息 </h2>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="detail" class="form-horizontal form-label-left" method="post" name="detail">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="time">时间
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="date" id="time" required="required" class="form-control col-md-7 col-xs-12" name="time" value="{{plan.time}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="need">需求量
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="need" name="need" required="required" class="form-control col-md-7 col-xs-12" value="{{plan.amount}}">
+                        </div>
+                      </div>
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+						  <button class="btn btn-primary" type="reset">重置</button>
+                          <a class="btn btn-success" href="javascript:if(confirm('确定要删除此条计划吗?')) location='{% url 'plan_delete' plan.id %}'">删除</a>
+                          <button class="btn btn-success" type="submit">保存</button>
+                          <a class="btn btn-success" href="{% url 'MPS_detail' mps_id %}">返回</a>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+{% endblock %}

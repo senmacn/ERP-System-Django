@@ -1,0 +1,141 @@
+{% extends "frame.html" %}
+{% block title %}
+检验单信息
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+<div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>检验单信息 </h2>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="detail" class="form-horizontal form-label-left" method="post" name="detail">
+
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id">检验单编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="id" required="required" class="form-control col-md-7 col-xs-12" name="id"value="{{Jianyandan.id}}">
+                        </div>
+                      </div>
+                        <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="wuliaobianhao">物料名称
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select type="text" id="wuliaobianhao" required="required" class="form-control col-md-7 col-xs-12" name="wuliaobianhao">
+                              {% for Materials in Materialss %}
+                               <option value={{Materials.id}}>
+                                 {{Materials.name}}({{Materials.id}})
+
+                              </option>
+                              {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="jiagongzongxin_id">加工中心编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                             <select type="text" id="jiagongzongxin_id" required="required" class="form-control col-md-7 col-xs-12" name="jiagongzongxin_id">
+                              {% for jiagongzhongxin in jiagongzhongxins %}
+                               <option value={{jiagongzhongxin.id}}>
+                                 {{jiagongzhongxin.id}}
+
+                              </option>
+                              {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="jyrid">检验申请人名称
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                           <select type="text" id="jyrid" required="required" class="form-control col-md-7 col-xs-12" name="jyrid">
+                              {% for Staff in Staffs %}
+                               <option value={{Staff.id}}>
+                                  {{Staff.name}}({{Staff.id}})
+
+                              </option>
+                              {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+
+                         <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="chejianid">车间编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="chejianid" required="required" class="form-control col-md-7 col-xs-12" name="chejianid"value="{{Jianyandan.chejianid}}">
+                        </div>
+                      </div>
+                          <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="shijian">时间
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="date" id="shijian" required="required" class="form-control col-md-7 col-xs-12" name="shijian"value="{{Jianyandan.shijian}}">
+                        </div>
+                      </div>
+                        <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="shuliang">数量
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="shuliang" required="required" class="form-control col-md-7 col-xs-12" name="shuliang"value="{{Jianyandan.shuliang}}">
+                        </div>
+                      </div>
+                               <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="jieguo">检验结果
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select type="text" id="jieguo" required="required" class="form-control col-md-7 col-xs-12" name="jieguo">
+                              <option value='1'>
+                                  合格
+
+                              </option>
+                               <option value='0'>
+                                 不 合格
+
+                              </option>
+                          </select>
+                        </div>
+                      </div>
+
+
+
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-danger" type="button" onclick="act2()">删除</button>
+						  <button class="btn btn-primary" type="reset">重置</button>
+                          <button class="btn btn-success" type="button" onclick="act1()">保存</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+
+<script>
+    function act1(){
+        document.detail.action="{% url 'jianyandanDetail' Jianyandan.id%}";
+        document.detail.submit();
+    }
+
+    function act2(){
+        document.detail.action="{% url 'jianyandanDelete'%}";
+        var r = confirm('确认删除');
+        if (r == true){
+          document.detail.submit();
+        }
+        else{
+          pass;
+        }
+    }
+</script>
+{% endblock %}

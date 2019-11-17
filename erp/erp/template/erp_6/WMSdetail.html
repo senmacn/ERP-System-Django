@@ -1,0 +1,130 @@
+{% extends "frame.html" %}
+{% block title %}
+仓库信息
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+<div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>仓库信息 </h2>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="detail" class="form-horizontal form-label-left" method="post" name="detail">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="location">仓库编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="WMS_id" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12" name="WMS_id" value="{{wms.WMS_id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="location">库位
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="location" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12" name="location" value="{{wms.location}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="goods_id">物料编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="goods_id" readonly="readonly" name="goods_id" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.goods_id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="goods_name">物料名称
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="goods_name" readonly="readonly" name="goods_name" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.goods_name}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="norms">物料规格
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="norms" readonly="readonly" name="norms" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.norms}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="volume">容量
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="volume" name="volume" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.volume}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="employ">占用量
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="number" id="employ" name="employ" required="required" class="form-control col-md-7 col-xs-12" value="{{ wms.employ }}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ratio">占比
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="ratio" name="ratio" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.ratio}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="charger_id">管理人员编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="charger_id" readonly="readonly" name="charger_id" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.charger_id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="charger_name">管理人员姓名
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="charger_name" readonly="readonly" name="charger_name" required="required" class="form-control col-md-7 col-xs-12" value="{{wms.charger_name}}">
+                        </div>
+                      </div>
+
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-danger" type="button" onclick="act2()">删除</button>
+						  <button class="btn btn-primary" type="reset">重置</button>
+                          <button class="btn btn-success" type="button" onclick="act1()">保存</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+
+<script>
+    function act1(){
+        document.detail.action="{% url 'WMSDetail' wms.location%}";
+        document.detail.submit();
+    }
+
+    function act2(){
+        document.detail.action="{% url 'WMSDelete'%}";
+        var r = confirm('确认删除');
+        if (r == true){
+          document.detail.submit();
+        }
+        else{
+          pass;
+        }
+    }
+</script>
+{% endblock %}

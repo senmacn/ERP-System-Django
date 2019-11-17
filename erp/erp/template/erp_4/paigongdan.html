@@ -1,0 +1,96 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+派工管理
+{% endblock %}
+
+{% block content %}
+<div class="right_col" role="main">
+  <div class="x_panel">
+
+          <div class="x_title">
+            <h2>派工单信息</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <!--设置栏-->
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+
+          <!--    新增派工单-->
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-left">
+            <div class="btn-group col-md-5">
+                  <a class="btn btn-sm btn-success btn-block" href="{% url 'add_paigongdan' %}">新增派工单</a>
+            </div>
+          </div>
+
+          <!--搜索-->
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+              <form  class="form-group" action="" method="get" name="id_search">
+                    <div class="input-group">
+                          <input type="text" class="form-control" placeholder="派工单信息查询（按单号）" name="id">
+                          <span class="input-group-btn" style="left: 1px">
+                            <button class="btn btn-default" type="submit">搜索</button>
+                          </span>
+                    </div>
+              </form>
+          </div>
+
+          <div class="x_content">
+
+            <!--表格-->
+            <div class="col-sm-12">
+              <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action dataTable no-footer" role="grid" aria-describedby="datatable-checkbox_info">
+                <thead><tr role="row">
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">派工单单号</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">加工中心编号</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">物料名称</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">派工申请人</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">时间</th>
+                          </tr>
+                </thead>
+                <tbody>
+                        {% if search_paigongdan%}
+
+                          {% for paigongdan in search_paigongdan %}
+                          <tr>
+                            <td>
+                                <a href="{% url 'paigongdanDetail' paigongdan.id %}" style="color: #953b39;text-decoration: underline #00aeef;">
+                                    {{paigongdan.id}}
+                                </a>
+                            </td>
+                            <td>{{paigongdan.jiagongzhongxin_id}}</td>
+                            <td>{{paigongdan.wuliaobianhao}}</td>
+                            <td>{{paigongdan.pgid}}</td>
+                          <td>{{paigongdan.shijian}}</td>
+                          </tr>
+                            {% endfor %}
+                           {% else %}
+
+                          {% for paigongdan in Paigongdan %}
+                          <tr>
+                            <td>
+                                <a href="{% url 'paigongdanDetail' paigongdan.id%}" style="color: #953b39;text-decoration: underline #00aeef;">
+                                    {{paigongdan.id}}
+                                </a>
+                            </td>
+                            <td>{{paigongdan.jiagongzhongxin_id}}</td>
+                            <td>{{paigongdan.wuliaobianhao}}</td>
+                            <td>{{paigongdan.pgid}}</td>
+                          <td>{{paigongdan.shijian}}</td>
+                          </tr>
+                          {% endfor %}
+
+
+                        {% endif %}
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+  </div>
+</div>
+{% endblock %}

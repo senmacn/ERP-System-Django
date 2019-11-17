@@ -1,0 +1,115 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+收货与评分记录
+{% endblock %}
+
+{% block content %}
+        <div class="right_col" role="main">
+        <div class="x_panel">
+
+                  <div class="x_title">
+                    <h2>收货与考核单
+                    </h2>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="x_content">
+
+
+
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-left">
+            <div class="btn-group col-md-5">
+                  <a class="btn btn-sm btn-success btn-block" href="{% url 'assessment' %}">到货接收</a>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+              <form  class="form-group" action="" method="get" name="id_search">
+                    <div class="input-group">
+                          <input type="text" class="form-control" placeholder="订单号" name="order_id">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">搜索</button>
+                          </span>
+                    </div>
+              </form>
+          </div>
+                    <!--表格-->
+                    <div class="col-sm-12">
+                      <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action dataTable no-footer" role="grid" aria-describedby="datatable-checkbox_info">
+                        <thead><tr role="row">
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">订单号</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">到达时间</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">问题订单</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">信誉分</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">质量分</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">备注</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">评分人</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">评分时间</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">操作</th>
+                        </tr></thead>
+                        <tbody>
+                        {% if search_order %}
+                          {% for assessment in search_order %}
+
+                                <tr>
+                                <td>{{assessment.id}}</td>
+                                <td>{{assessment.reality_time}}</td>
+                                    {% if assessment.trouble_order%}
+                                    <td>是</td>
+                                    {%else%}
+                                    <td>否</td>
+                                    {%endif%}
+                                <td>{{assessment.credit_mark}}</td>
+                                <td>{{assessment.quality_mark}}</td>
+                                <td>{{assessment.remark}}</td>
+                                <td>{{assessment.operator}}</td>
+                                <td>{{assessment.assess_time}}</td>
+                                <td>
+                                <a href="{% url 'order read' assessment.id %}" style="color: #953b39;text-decoration: underline #00aeef;">
+                                    查询订单
+                                </a>
+                                </td>
+                              <tr>
+                          {% endfor %}
+
+                          {% else %}
+                            {% for assessment in order %}
+                              {%  if assessment.state == '已完成' %}
+                                <tr>
+                                <td>{{assessment.id}}</td>
+                                <td>{{assessment.reality_time}}</td>
+                                {% if assessment.trouble_order%}
+                                    <td>是</td>
+                                    {%else%}
+                                    <td>否</td>
+                                    {%endif%}
+                                <td>{{assessment.credit_mark}}</td>
+                                <td>{{assessment.quality_mark}}</td>
+                                <td>{{assessment.remark}}</td>
+                                <td>{{assessment.operator}}</td>
+                                <td>{{assessment.assess_time}}</td>
+                                <td>
+                                <a href="{% url 'order read' assessment.id %}" style="color: #953b39;text-decoration: underline #00aeef;">
+                                    查询订单
+                                </a>
+                                </td>
+                                <tr>
+                              {% endif %}
+                            {% endfor %}
+                          {% endif %}
+                        </tbody>
+                      </table>
+                    </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                <a class="btn btn-success" href="{% url 'Receive management' %}">返回</a>
+						</div>
+            </div>
+                </div>
+
+
+
+
+
+    </div>
+{% endblock %}

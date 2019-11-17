@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>欢迎登陆EMR系统 | </title>
+    {% load staticfiles %}
+    <!-- Bootstrap -->
+    <link href="../static/css/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../static/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="../static/css/animate.min.css" rel="stylesheet">
+	<!-- Nprogress.css -->
+	<link href="../static/css/nprogress.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="../static/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form action="." method="POST">
+              {% for msg in messages %}
+              <div class="alert alert-{{msg.tags}}}">{{ msg }}</div>
+              {% endfor %}
+              <h1>登陆</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" required="" name="Username"/>
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" required="" name="Password"/>
+              </div>
+              <div>
+                <h3>
+                <input class="btn btn-default submit" type="submit" value="确认" style="float: none">
+                </h3>
+                <a class="reset_pass" href="#">忘记密码?</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">新用户?
+                  <a href="{% url 'register' %}"> 创建账户</a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-paw"></i> ERP系统!</h1>
+                  <p>©2019年开发</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

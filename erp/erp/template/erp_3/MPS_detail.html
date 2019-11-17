@@ -1,0 +1,107 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+MPS详情
+{% endblock %}
+
+{% block content %}
+
+<div class="right_col" role="main">
+  <div class="x_panel">
+
+          <div class="x_title">
+            <h2>产品查询</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <!--设置栏-->
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+
+      <!--增删改-->
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-left">
+            <div class="btn-group col-md-5">
+                <p><a class="btn btn-sm btn-success btn-block" href="{% url 'MPS_alter' mps.id %}">修改计划</a></p>
+            </div>
+            <div class="btn-group col-md-5">
+                <p><a class="btn btn-sm btn-success btn-block" href="javascript:if(confirm('确定要删除此计划吗?'))location='{% url 'MPS_delete' mps.id %}'">删除计划</a></p>
+            </div>
+          </div>
+
+          <!--搜索-->
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+              <form  class="form-group" action="" method="get" name="id_search">
+                    <div class="input-group">
+                          <input type="text" class="form-control" placeholder="编号" name="id">
+                          <span class="input-group-btn" style="left: 1px">
+                            <button class="btn btn-default" type="submit">搜索</button>
+                          </span>
+                    </div>
+                    <div class="input-group">
+                          <input type="text" class="form-control" placeholder="名称" name="name">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">搜索</button>
+                          </span>
+                    </div>
+              </form>
+          </div>
+
+          <div class="x_content">
+
+            <!--表格-->
+            <div class="col-sm-12">
+              {% for product_mas in products %}
+              <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action dataTable no-footer" role="grid" aria-describedby="datatable-checkbox_info">
+              {% if forloop.first %}
+                  <caption><b>{{mps.name}}</b></caption>
+              {% endif %}
+                <thead><tr role="row">
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">编号</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">物料编号</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">名称</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">需求量</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">需求时间</th>
+                        </tr>
+                </thead>
+                <tbody>
+                {% if not product_mas.plan %}
+                <tr>
+
+                <td>
+                    <i><b><a href="{% url 'product_alter' product_mas.product.id %}">{{product_mas.product.id}}</a></b></i>
+                </td>
+                <td>{{product_mas.product.product_id}}</td>
+                <td>{{product_mas.product.name}}</td>
+                <td align='center'>空</td>
+                <td align='center'>空</td>
+              </tr>
+
+                {% else %}
+
+                        {% for plan in product_mas.plan %}
+                          <tr>
+                              {% if forloop.first %}
+                            <td rowspan=10>
+                                <i><b><a href="{% url 'product_alter' product_mas.product.id %}">{{product_mas.product.id}}</a></b></i>
+                            </td>
+                            <td rowspan="10">{{product_mas.product.product_id}}</td>
+                            <td rowspan=10>{{product_mas.product.name}}</td>
+                              {% endif %}
+                            <td align='center'>{{plan.amount}}</td>
+                            <td align='center'>
+                                <i><b><a href="{% url 'plan_alter' plan.id %}">{{plan.time}}</a></b></i>
+                            </td>
+                          </tr>
+                        {% endfor %}
+                {% endif %}
+                </tbody>
+              </table>
+            {% endfor %}
+            </div>
+          </div>
+  </div>
+</div>
+{% endblock %}

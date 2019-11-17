@@ -1,0 +1,111 @@
+{% extends "frame.html" %}
+{% block title %}供货商选择
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+<div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>选择供货商 </h2>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="detail" class="form-horizontal form-label-left" method="post" name="detail">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id">申购单编码
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="id" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12" name="id" value="{{requisition.id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_id">物料编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="material_id" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12" value="{{requisition.material_id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material_name">物料名称
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="material_name" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12" value="{{requisition.material_name}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="supplier.name">供货商名称
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="supplier.name"  required="required" class="form-control col-md-7 col-xs-12" value="{{requisition.supplier}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price">报价
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="price" required="required" class="form-control col-md-7 col-xs-12" value="{{requisition.price}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tran_price">运费
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="tran_price" required="required" class="form-control col-md-7 col-xs-12" value="{{requisition.tran_price}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rate">合格率
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="rate" required="required" class="form-control col-md-7 col-xs-12" value="{{requisition.rate}}">
+                        </div>
+                      </div>
+
+                                <!--表格-->
+                    <div class="col-sm-12"></div>
+                      <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action dataTable no-footer" role="grid" aria-describedby="datatable-checkbox_info">
+                        <thead><tr role="row">
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">物料编号</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">名称</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">供货商名称</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">规格型号</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">报价</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">运费</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">合格率</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">操作</th>
+                        </tr></thead>
+                        <tbody>
+
+
+                          {% for supply in supply %}
+                          <tr>
+                            <td>{{supply.material.id}}</td>
+                            <td>{{supply.material.name}}</td>
+                            <td>{{supply.supplier.name}}</td>
+                            <td>{{supply.material.specification}}</td>
+                            <td>{{supply.price}}</td>
+                            <td>{{supply.tran_price}}</td>
+                            <td>{{supply.rate}}</td>
+                            <td>
+                                <a href="{% url 'choose supplier' requisition.id supply.id%}" style="color: #953b39;text-decoration: underline #00aeef;">
+                                    选择
+                                </a>
+                            </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+
+
+                 </form>
+                  </div>
+                </div>
+</div>
+</div>
+
+{% endblock %}

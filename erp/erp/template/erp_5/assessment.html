@@ -1,0 +1,113 @@
+{% extends 'frame.html' %}
+
+{% block title%}
+业务评分
+{% endblock %}
+
+{% block content %}
+<div class="right_col" role="main">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+
+                  <div class="x_title">
+                    <h2>业务评分</h2>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="x_content">
+                    <br>
+                    <form id="add" name="add" class="form-horizontal form-label-left" method="post" action=".">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id">订单编码
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select form="add" id="id" class="form-control select2_group form-control" required="" name="id">
+                              {% for item1 in order %}
+                              <option value="{{item1.id}}">{{item1.id}}</option>
+                              {% endfor %}
+                            </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="reality_time">实际到达时间
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="date" id="reality_time" name="reality_time" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                     </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">是否为问题订单</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          {% if order.trouble_order%}
+                          <input type="radio" class="flat" name="trouble" checked="True" value="True" /> 是
+                          <input type="radio" class="flat" name="trouble" value="False" /> 否
+                          {% else %}
+                          <input type="radio" class="flat" name="trouble" value="True" /> 是
+                          <input type="radio" class="flat" name="trouble" checked="True" value="False" /> 否
+                          {% endif %}
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="credit_mark">信誉分
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="credit_mark" required="required" class="form-control col-md-7 col-xs-12" name="credit_mark">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="quality_mark">质量分
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="quality_mark" required="required" class="form-control col-md-7 col-xs-12" name="quality_mark">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="remarks">备注
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="remarks"  class="form-control col-md-7 col-xs-12" name="remarks">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="operator">评分人
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select form="add" id="operator" class="form-control select2_group form-control" required="" name="operator">
+                              {% for item2 in staff %}
+                              <option value="{{item2.name}}">{{item2.name}}</option>
+                              {% endfor %}
+                            </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="assess_time">评分时间
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="date" id="assess_time" name="assess_time" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                     </div>
+
+
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <a class="btn btn-danger" href="{% url 'Receive management' %}">取消</a>
+						    <button class="btn btn-primary" type="reset">重置</button>
+                            <button type="submit" class="btn btn-success">提交</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+供应商管理
+{% endblock %}
+
+{% block content %}
+    <div class="right_col" role="main">
+
+
+        <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>
+                  <a class="btn btn-sm btn-success btn-block"  onclick="no_right({{right}});return false;" href="{% url 'supplier information' %}">供应商基础信息管理</a>
+                    </h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    简介
+                   </div>
+                </div>
+              </div>
+         </div>
+
+
+        <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>
+                  <a class="btn btn-sm btn-success btn-block" onclick="no_right({{right}});return false;" href="{% url 'supply information' %}">供货信息管理</a>
+                    </h2>
+                  <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    简介
+                   </div>
+                </div>
+              </div>
+         </div>
+
+        <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>
+                  <a class="btn btn-sm btn-success btn-block" onclick="no_right({{right}});return false;" href="{% url 'supplier assessment' %}">供应商考核</a>
+                    </h2>
+                  <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    简介
+                   </div>
+                </div>
+              </div>
+         </div>
+
+
+        </div>
+{% endblock %}

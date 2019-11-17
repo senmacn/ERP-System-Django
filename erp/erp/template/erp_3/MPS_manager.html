@@ -1,0 +1,97 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+MPS管理
+{% endblock %}
+
+{% block content %}
+<div class="right_col" role="main">
+  <div class="x_panel">
+
+          <div class="x_title">
+            <h2>生产计划查询</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <!--设置栏-->
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+
+          <!--添加生产计划-->
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-left">
+            <div class="btn-group col-md-5">
+                  <a class="btn btn-sm btn-success btn-block" onclick="no_right({{right}});return false;" href="{% url 'MPS_add' %}">新增生产计划</a>
+            </div>
+          </div>
+
+          <!--搜索-->
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+              <form  class="form-group" action="" method="get" name="id_search">
+                    <div class="input-group">
+                          <input type="text" class="form-control" placeholder="编号" name="id">
+                          <span class="input-group-btn" style="left: 1px">
+                            <button class="btn btn-default" type="submit">搜索</button>
+                          </span>
+                    </div>
+                    <div class="input-group">
+                          <input type="text" class="form-control" placeholder="名称" name="name">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">搜索</button>
+                          </span>
+                    </div>
+              </form>
+          </div>
+
+          <div class="x_content">
+
+            <!--表格-->
+            <div class="col-sm-12">
+              <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action dataTable no-footer" role="grid" aria-describedby="datatable-checkbox_info">
+                <thead><tr role="row">
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">编号</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">名称</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">开始时间</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">结束时间</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">详细信息</th>
+                        </tr>
+                </thead>
+                <tbody>
+                        {% if search_MPS %}
+
+                          {% for mps in search_MPS %}
+                          <tr>
+                            <td>{{mps.id}}</td>
+                            <td>{{mps.name}}</td>
+                            <td>{{mps.start_time}}</td>
+                            <td>{{mps.end_time}}</td>
+                            <td>
+                                <i><b><a onclick="no_right({{right}});return false;" href="{% url 'MPS_detail' mps.id %}">详细信息</a></b></i>
+                            </td>
+                          </tr>
+                          {% endfor %}
+
+                        {% else %}
+
+                          {% for mps in MPS %}
+                          <tr>
+                            <td>{{mps.id}}</td>
+                            <td>{{mps.name}}</td>
+                            <td>{{mps.start_time}}</td>
+                            <td>{{mps.end_time}}</td>
+                            <td>
+                                <i><b><a onclick="no_right({{right}});return false;" href="{% url 'MPS_detail' mps.id %}">详细信息</a></b></i>
+                            </td>
+                          </tr>
+                          {% endfor %}
+
+                        {% endif %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+  </div>
+</div>
+{% endblock %}

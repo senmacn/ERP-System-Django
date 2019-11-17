@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %} {% endblock %}</title>
+
+    {% load staticfiles %}
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap/dist/css/bootstrap.min.css '%}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static 'css/font-awesome/css/font-awesome.min.css '%}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{% static 'css/nprogress.css '%}" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{% static 'css/iCheck/skins/flat/green.css '%}" rel="stylesheet">
+
+    <!-- bootstrap-progressbar -->
+    <link href="{% static 'css/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css '%}" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="{% static 'css/jqvmap/dist/jqvmap.min.css '%}" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="{% static 'css/bootstrap-daterangepicker/daterangepicker.css '%}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{% static 'css/custom.min.css '%}" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="#" class="site_title"><i class="fa fa-paw"></i> <span>ERP系统</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_info">
+                <span><strong>欢迎,</strong></span>
+                <h2>{{request.session.user_name}}</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>功能</h3>
+                <ul class="nav side-menu">
+                  <li><a href="{% url 'index' %}"><i class="fa fa-home"></i> 主页 </a>
+
+                  </li>
+                  <li><a><i class="fa fa fa fa-archive"></i> 工程管理 <span class="fa fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'personnel_management' %}">人员管理</a></li>
+                      <li><a href="{% url 'department_management' %}">部门管理</a></li>
+                      <li><a href="{% url 'material_management' %}">物料管理</a></li>
+                      <li><a href="{% url 'FlowOfProduction_management' %}">生产流程管理</a></li>
+                      <li><a href="{% url 'BOM_management' %}">BOM管理</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-shopping-cart"></i> 销售管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'staff_management' %}">销售人员管理</a></li>
+                      <li><a href="{% url 'customer_management' %}">客户管理</a></li>
+                      <li><a href="{% url 'product_management' %}">产品管理</a></li>
+                      <li><a href="{% url 'order_management' %}">订单管理</a></li>
+                      <li><a href="{% url 'application_management' %}">提货申请管理</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> MRP <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'MPS_manager' %}">主生产计划管理</a></li>
+                      <li><a href="{% url 'indent_create' %}">订单生成</a></li>
+		              <li><a href="{% url 'MRP_record' %}">MRP记录</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-bar-chart-o"></i> 库存管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'WMS' %}">库房管理</a></li>
+                      <li><a href="{% url 'Goods' %}">物料管理</a></li>
+                      <li><a href="{% url 'Check' %}">盘点</a></li>
+                      <li><a href="{% url 'App' %}">申请单管理</a></li>
+                      <li><a href="{% url 'Move' %}">移库管理</a></li>
+                      <li><a href="{% url 'Change' %}">出入库管理</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-tasks"></i> 生产计划管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'zhizaodingdan' %}">制造订单管理</a></li>
+                        <li><a href="{% url 'ersonnel_management' %}">员工信息处理</a></li>
+                        <li><a href="{% url 'paigongdan' %}">派工管理</a></li>
+                        <li><a href="{% url 'kudan' %}">出入库管理</a></li>
+                        <li><a href="{% url 'jianyandan' %}">完工管理</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-clone"></i> 采购管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a  href="{% url 'Supplier management' %}">供应商管理</a></li>
+                      <li><a  href="{% url 'Buyer management' %}">采购员管理</a></li>
+                      <li><a  href="{%  url 'Order management' %}">订单管理</a></li>
+                      <li><a  href="{% url 'Receive management' %}">接收管理</a></li>
+                      <li><a  href="{% url 'Query report' %}">查询与报表</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu_section">
+                <h3>Live On</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-bug"></i> 通知<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="e_commerce.html">E-commerce</a></li>
+                      <li><a href="projects.html">Projects</a></li>
+                      <li><a href="project_detail.html">Project Detail</a></li>
+                      <li><a href="contacts.html">Contacts</a></li>
+                      <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="page_403.html">403 Error</a></li>
+                      <li><a href="page_404.html">404 Error</a></li>
+                      <li><a href="page_500.html">500 Error</a></li>
+                      <li><a href="plain_page.html">Plain Page</a></li>
+                      <li><a href="erp_1/login.html">Login Page</a></li>
+                      <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><i class="fa fa-laptop"></i> 更多功能  <span class="label label-success pull-right">Coming Soon</span></a></li>
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle" style="padding-bottom: 16px">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a class="login_content btn-group" href="{% url 'logout' %}">登出</a></li>
+               </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+        {% block content %} {% endblock %}
+
+
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function no_right(r){
+        if (r==true)
+        {
+          pass;
+        }
+        else {
+          alert('无权限');
+        }
+      }
+    </script>
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'css/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{% static 'css/fastclick/lib/fastclick.js' %}"></script>
+    <!-- NProgress -->
+    <script src="{% static 'css/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="{% static 'js/Chart.js/dist/Chart.min.js' %}"></script>
+    <!-- gauge.js -->
+    <script src="{% static 'js/gauge.js/dist/gauge.min.js' %}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{% static 'css/bootstrap-progressbar/bootstrap-progressbar.min.js' %}"></script>
+    <!-- iCheck -->
+    <script src="{% static 'css/iCheck/icheck.min.js' %}"></script>
+    <!-- Skycons -->
+    <script src="{% static 'js/skycons/skycons.js' %}"></script>
+    <!-- Flot -->
+    <script src="{% static 'js/Flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'js/Flot/jquery.flot.pie.js' %}"></script>
+    <script src="{% static 'js/Flot/jquery.flot.time.js' %}"></script>
+    <script src="{% static 'js/Flot/jquery.flot.stack.js' %}"></script>
+    <script src="{% static 'js/Flot/jquery.flot.resize.js' %}"></script>
+    <!-- Flot plugins -->
+    <script src="{% static 'js/flot.orderbars/js/jquery.flot.orderBars.js' %}"></script>
+    <script src="{% static 'js/flot-spline/js/jquery.flot.spline.min.js' %}"></script>
+    <script src="{% static 'js/flot.curvedlines/curvedLines.js' %}"></script>
+    <!-- DateJS -->
+    <script src="{% static 'js/DateJS/build/date.js' %}"></script>
+    <!-- JQVMap -->
+    <script src="{% static 'js/jqvmap/dist/jquery.vmap.js' %}"></script>
+    <script src="{% static 'js/jqvmap/dist/maps/jquery.vmap.world.js' %}"></script>
+    <script src="{% static 'js/jqvmap/examples/js/jquery.vmap.sampledata.js' %}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{% static 'js/moment/min/moment.min.js' %}"></script>
+    <script src="{% static 'css/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{% static 'js/custom.min.js' %}"></script>
+
+  </body>
+</html>

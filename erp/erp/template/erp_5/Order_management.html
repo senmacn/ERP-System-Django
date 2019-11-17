@@ -1,0 +1,47 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+订单管理
+{% endblock %}
+
+{% block content %}
+    <div class="right_col" role="main">
+
+
+        <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>
+                  <a class="btn btn-sm btn-success btn-block" onclick="no_right({{right}});return false;" href="{% url 'order information' %}">订单管理</a>
+                    </h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    简介
+                   </div>
+                </div>
+              </div>
+         </div>
+
+
+        <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>
+                  <a class="btn btn-sm btn-success btn-block" onclick="no_right({{right}});return false;" href="{% url 'requisition information' %}">申购单管理</a>
+                    </h2>
+                  <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    简介
+                   </div>
+                </div>
+              </div>
+         </div>
+
+
+
+        </div>
+{% endblock %}

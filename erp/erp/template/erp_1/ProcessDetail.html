@@ -1,0 +1,104 @@
+{% extends "frame.html" %}
+{% block title %}
+人员信息
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>工艺信息 </h2>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" method="post" name="detail">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id">编号
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" readonly='readonly' id="id" required="required" class="form-control col-md-7 col-xs-12" name="id" value="{{process.id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">名称
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12" value="{{process.name}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">材料</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control"name="materials">
+                              <option value="{{process.materials}}">{{process.materials}}</option>
+                              {% for material in materials %}
+                              <option value="{{material.name}}">{{material.name}}</option>
+                              {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">负责人</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control"name="leading_man">
+                              <option value="{{process.leading_man}}">{{process.leading_man}}</option>
+                              {% for people in staff %}
+                              <option value="{{people.name}}">{{people.name}}</option>
+                              {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">所需时间</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="required_time" class="form-control col-md-7 col-xs-12" required="required" type="number" name="required_time" value="{{process.required_time}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">额外信息</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <textarea rows="3" id="note" class="form-control col-md-7 col-xs-12"name="note" value="{{process.note}}"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-danger" type="button" onclick="act2()">删除</button>
+						  <button class="btn btn-primary" type="reset">重置</button>
+                          <button type="submit" class="btn btn-success" onclick="act1()">保存</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+
+<script>
+    function act1(){
+        document.detail.action="{% url 'ProcessDetail' process.id%}";
+        document.detail.submit();
+    }
+
+    function act2(){
+        document.detail.action="{% url 'processDelete'%}";
+        var r = confirm('确认删除');
+        if (r == true){
+          document.detail.submit();
+        }
+        else{
+          pass;
+        }
+    }
+</script>
+{% endblock %}

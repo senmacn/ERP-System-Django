@@ -1,0 +1,42 @@
+{% extends "frame.html" %}
+{% block title %}
+订单生成
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+<div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>订单生成</h2>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="detail" class="form-horizontal form-label-left" method="post" name="detail">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="select">选择MPS
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select form="detail" id="select" class="form-control select2_group form-control" required="" name="select_mps">
+                              {% for Mps in select_mps %}
+                              <option value="{{Mps.id}}">({{Mps.id}}){{Mps.name}}</option>
+                              {% endfor %}
+                            </select>
+						</div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+						  <button class="btn btn-primary" type="reset">重置</button>
+                          <button class="btn btn-success" type="submit">提交</button>
+						{% if is_add %}
+                          <a class="btn btn-success" onclick="no_right({{right}});return false;" href="{% url 'indent_show' mps.id %}">生成订单</a>
+                        {% endif %}
+						</div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "frame.html" %}
+{% block title %}
+制造订单信息
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+<div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>制造订单信息 </h2>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="detail" class="form-horizontal form-label-left" method="post" name="detail">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id">id
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="id" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12" name="id" value="{{Zhizaodingdan.id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="huohao">物料名称
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                         <select type="text" id="huohao" required="required" class="form-control col-md-7 col-xs-12" name="huohao">
+                              {% for Materials in Materialss %}
+                               <option value={{Materials.id}}>
+                                 {{Materials.name}}({{Materials.id}})
+
+                              </option>
+                              {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">批量</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="piliang" class="form-control col-md-7 col-xs-12" required="required" type="text" name="piliang" value="{{Zhizaodingdan.piliang}}">
+                        </div>
+                      </div>
+
+
+                        <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">车间编号</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="chejianbianhao" class="form-control col-md-7 col-xs-12" required="required" type="text" name="chejianbianhao" value="{{Zhizaodingdan.chejianbianhao}}">
+                        </div>
+                      </div>
+
+                         <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">完工时间</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="shijian" class="form-control col-md-7 col-xs-12" required="required" type="date" name="shijian" value="{{Zhizaodingdan.shijian}}">
+                        </div>
+                      </div>
+
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-danger" type="button" onclick="act2()">删除</button>
+						  <button class="btn btn-primary" type="reset">重置</button>
+                          <button class="btn btn-success" type="button" onclick="act1()">保存</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+
+<script>
+    function act1(){
+        document.detail.action="{% url 'zhizaodingdanDetail' Zhizaodingdan.id%}";
+        document.detail.submit();
+    }
+
+    function act2(){
+        document.detail.action="{% url 'zhizaodingdanDelete'%}";
+        var r = confirm('确认删除');
+        if (r == true){
+          document.detail.submit();
+        }
+        else{
+          pass;
+        }
+    }
+</script>
+{% endblock %}

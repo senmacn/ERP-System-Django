@@ -1,0 +1,110 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+物料管理
+{% endblock %}
+
+{% block content %}
+    <div class="right_col" role="main">
+        <div class="x_panel">
+
+                  <div class="x_title">
+                    <h2>物料信息查询</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="x_content">
+
+
+                    <!--表格-->
+                    <div class="col-sm-12">
+                      <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action dataTable no-footer" role="grid" aria-describedby="datatable-checkbox_info">
+                        <thead><tr role="row">
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">编号</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">物料编号</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">物料名称</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">物料规格</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">库房编号</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">货位</th>
+{#                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">是否已出入库</th>#}
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">申请数量</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">数量</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">单位</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">出入库日期</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">保存期/天</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">最晚出库日期</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">管理人员编号</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">管理人员姓名</th>
+                        </tr></thead>
+                        <tbody>
+                          {% for Goods in Goodss1 %}
+                          {% if Goods.deal > 30 %}
+                          <tr>
+                            <td>{{Goods.id}}</td>
+{#                            <td>{{Goods.id}}</td>#}
+                            <td>{{Goods.goods_id}}</td>
+                            <td>{{Goods.goods_name}}</td>
+                            <td>{{Goods.norms}}</td>
+                            <td>{{Goods.WMS_id}}</td>
+                            <td>{{Goods.location}}</td>
+    {#                            <td>{{Goods.ined}}</td>#}
+                            <td>{{Goods.amount_app}}</td>
+                            <td>{{Goods.amount}}</td>
+                            <td>{{Goods.unit}}</td>
+                            <td>{{Goods.date_in}}</td>
+                            <td>{{Goods.time}}</td>
+                            <td>{{Goods.date_line}}</td>
+                            <td>{{Goods.charger_id}}</td>
+                            <td>{{Goods.charger_name}}</td>
+                          </tr>
+                          {% else %}
+                              {% if Goods.deal > 0 %}
+                              <tr>
+                                <td><font color="Orange">{{Goods.id}}</font></td>
+                                <td>{{Goods.goods_id}}</td>
+                                <td>{{Goods.goods_name}}</td>
+                                <td>{{Goods.norms}}</td>
+                                <td>{{Goods.WMS_id}}</td>
+                                <td>{{Goods.location}}</td>
+                                <td>{{Goods.amount_app}}</td>
+                                <td>{{Goods.amount}}</td>
+                                <td>{{Goods.unit}}</td>
+                                <td><font color="Orange">{{Goods.date_in}}</font></td>
+                                <td><font color="Orange">{{Goods.time}}</font></td>
+                                <td><font color="Orange">{{Goods.date_line}}</font></td>
+                                <td>{{Goods.charger_id}}</td>
+                                <td>{{Goods.charger_name}}</td>
+                              </tr>
+                              {% else %}
+                              <tr>
+                                <td><font color="red">{{Goods.id}}</font></td>
+                                <td>{{Goods.goods_id}}</td>
+                                <td>{{Goods.goods_name}}</td>
+                                <td>{{Goods.norms}}</td>
+                                <td>{{Goods.WMS_id}}</td>
+                                <td>{{Goods.location}}</td>
+                                <td>{{Goods.amount_app}}</td>
+                                <td>{{Goods.amount}}</td>
+                                <td>{{Goods.unit}}</td>
+                                <td><font color="red">{{Goods.date_in}}</font></td>
+                                <td><font color="red">{{Goods.time}}</font></td>
+                                <td><font color="red">{{Goods.date_line}}</font></td>
+                                <td>{{Goods.charger_id}}</td>
+                                <td>{{Goods.charger_name}}</td>
+                              </tr>
+                              {% endif %}
+                          {% endif %}
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+    </div>
+{% endblock %}

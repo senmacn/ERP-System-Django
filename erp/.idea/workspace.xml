@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="86d7ea03-e126-4a32-94e8-1a8ca0fa04d0" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/erp/erp/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Total</find>
+      <find>../</find>
+      <find>lead</find>
+      <find>canvasDoughnut</find>
+      <find>pieChart</find>
+      <find>MPS_part</find>
+      <find>deliver</find>
+      <find>io</find>
+      <find>on click</find>
+      <find>click</find>
+      <find>delete</find>
+      <find>type</find>
+      <find>计划</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Users\79076\Desktop\project1\erp</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$USER_HOME$/AppData/Local/Temp/Rar$DRa17428.25867/erp_1/models.py" />
+        <option value="$PROJECT_DIR$/erp/erp_2/admin.py" />
+        <option value="$PROJECT_DIR$/erp/template/erp_2/OrderDetails.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_2/add_order.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_1/personnel_management.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_1/add_people.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_1/StaffDetail.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_2/order_management.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_1/BOM_management.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_2/application_management.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_2/customer_management.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_4/personnel_management.html" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Rar$DRa9616.661/project1/erp/erp_1/models.py" />
+        <option value="$PROJECT_DIR$/erp/erp_1/models.py" />
+        <option value="$PROJECT_DIR$/erp/template/frame.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_4/jianyandan.html" />
+        <option value="$PROJECT_DIR$/erp/erp_2/models.py" />
+        <option value="$PROJECT_DIR$/erp/template/erp_1/add_materials.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_1/material_management.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_2/add_product.html" />
+        <option value="$PROJECT_DIR$/erp/erp_2/views.py" />
+        <option value="$PROJECT_DIR$/erp/template/erp_2/add_app2.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_1/FlowOfProduction_management.html" />
+        <option value="$PROJECT_DIR$/erp/erp_5/views.py" />
+        <option value="$PROJECT_DIR$/erp/template/erp_1/Flow_detail.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_5/assessment_information.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_1/index.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_4/add_paigongdan.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_4/add_jianyandan.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_4/jianyandanDetail.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_4/paigongdanDetail.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_4/add_zhizaodingdan.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_4/zhizaodingdanDetail.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_4/add_kudan.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_4/kudan.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_4/kudanDetail.html" />
+        <option value="$PROJECT_DIR$/erp/erp_4/views.py" />
+        <option value="$PROJECT_DIR$/erp/template/erp_6/Move.html" />
+        <option value="$PROJECT_DIR$/erp/erp_6/models.py" />
+        <option value="$PROJECT_DIR$/erp/erp_3/views.py" />
+        <option value="$PROJECT_DIR$/erp/erp_1/admin.py" />
+        <option value="$PROJECT_DIR$/erp/template/erp_5/order_detail.html" />
+        <option value="$PROJECT_DIR$/erp/template/erp_2/product_management.html" />
+        <option value="$PROJECT_DIR$/erp/erp_1/views.py" />
+        <option value="$PROJECT_DIR$/erp/service.py" />
+        <option value="$PROJECT_DIR$/erp/service.ini" />
+        <option value="$PROJECT_DIR$/erp/template/register.html" />
+        <option value="$PROJECT_DIR$/erp/dist/manage/erp/settings.py" />
+        <option value="$PROJECT_DIR$/erp/manage.spec" />
+        <option value="$PROJECT_DIR$/erp/erp/urls.py" />
+        <option value="$PROJECT_DIR$/erp/erp/settings.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="875" />
+    <option name="y" value="5" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <showMembers ProjectPane="false" />
+      <showExcludedFiles Scope="false" ProjectPane="false" />
+      <autoscrollToSource ProjectPane="false" />
+      <sortByType ProjectPane="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="project1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project1" type="462c0819:PsiDirectoryNode" />
+              <item name="erp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project1" type="462c0819:PsiDirectoryNode" />
+              <item name="erp" type="462c0819:PsiDirectoryNode" />
+              <item name="erp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/erp/erp_6" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/erp/erp_" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\79076\Desktop\project1\erp" />
+      <recent name="C:\Users\79076\Desktop\project1\erp\template\erp_1" />
+      <recent name="C:\Users\79076\Desktop\project1\erp\template" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\79076\Desktop\project1\erp\erp_6" />
+      <recent name="C:\Users\79076\Desktop\project1\erp\erp_5" />
+      <recent name="C:\Users\79076\Desktop\project1\erp\erp_1" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="86d7ea03-e126-4a32-94e8-1a8ca0fa04d0" name="Default Changelist" comment="" />
+      <created>1568085870024</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568085870024</updated>
+      <workItem from="1568085871525" duration="8458000" />
+      <workItem from="1568121731920" duration="4150000" />
+      <workItem from="1568204802914" duration="401000" />
+      <workItem from="1568208014980" duration="930000" />
+      <workItem from="1568541560238" duration="2578000" />
+      <workItem from="1568545322173" duration="684000" />
+      <workItem from="1568679434245" duration="8980000" />
+      <workItem from="1569065028692" duration="2945000" />
+      <workItem from="1569125284779" duration="47000" />
+      <workItem from="1569244766105" duration="2149000" />
+      <workItem from="1569284497195" duration="8241000" />
+      <workItem from="1569304860943" duration="10862000" />
+      <workItem from="1569754551939" duration="8907000" />
+      <workItem from="1569855282792" duration="3776000" />
+      <workItem from="1569940151881" duration="5146000" />
+      <workItem from="1570359646272" duration="9380000" />
+      <workItem from="1570371269309" duration="133000" />
+      <workItem from="1570492945829" duration="21179000" />
+      <workItem from="1570548691733" duration="3745000" />
+      <workItem from="1570600117146" duration="407000" />
+      <workItem from="1570608167666" duration="2632000" />
+      <workItem from="1570695485817" duration="2219000" />
+      <workItem from="1570964291616" duration="1882000" />
+      <workItem from="1570972438837" duration="34000" />
+      <workItem from="1571097667830" duration="9751000" />
+      <workItem from="1571119198461" duration="11606000" />
+      <workItem from="1571569069805" duration="5920000" />
+      <workItem from="1571702659154" duration="21925000" />
+      <workItem from="1572307291151" duration="16432000" />
+      <workItem from="1572778715862" duration="2526000" />
+      <workItem from="1572781330424" duration="610000" />
+      <workItem from="1572782876482" duration="789000" />
+      <workItem from="1572912179246" duration="9843000" />
+      <workItem from="1572933617409" duration="4420000" />
+      <workItem from="1573368735320" duration="268000" />
+      <workItem from="1573369069895" duration="3036000" />
+      <workItem from="1573372135284" duration="7381000" />
+      <workItem from="1573386792458" duration="1291000" />
+      <workItem from="1573439411671" duration="6305000" />
+      <workItem from="1573454066989" duration="270000" />
+      <workItem from="1573454351433" duration="7630000" />
+      <workItem from="1573484036278" duration="2007000" />
+      <workItem from="1573517129794" duration="765000" />
+      <workItem from="1573518050950" duration="6532000" />
+      <workItem from="1573544905545" duration="3270000" />
+      <workItem from="1573549836451" duration="175000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="234024000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" x="670" y="59" width="195" height="706" id="Project" order="0" visible="true" weight="0.1997319" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3281471" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49798927" visible="true" weight="0.3069307" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5020107" side_tool="true" weight="0.3069307" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.48797736" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_1/Flow_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="96" column="8" lean-forward="true" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_5/assessment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1083" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_6/Change.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="74" column="6" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_5/assessment_information.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_1/ProcessDetail.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_6/Check.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="82" column="37" lean-forward="true" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_6/Goods.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1030" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_4/jianyandanDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="24" column="105" selection-start-line="24" selection-start-column="105" selection-end-line="24" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_4/paigongdanDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="48" column="39" lean-forward="true" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_4/add_paigongdan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="50" column="39" lean-forward="true" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_4/add_zhizaodingdan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/erp_6/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_4/zhizaodingdanDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_2/add_app2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="95" column="85" lean-forward="true" selection-start-line="95" selection-start-column="85" selection-end-line="95" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_1/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-381">
+          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_3/MPS_manager.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/erp_1/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/erp_3/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/erp_6/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="66" column="56" selection-start-line="66" selection-start-column="56" selection-end-line="66" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_6/Move.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="49" column="49" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/erp_6/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="280" column="93" selection-start-line="280" selection-start-column="26" selection-end-line="280" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_4/kudanDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_4/add_kudan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_4/add_jianyandan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_4/kudan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="82" column="50" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/erp_4/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1063">
+          <caret line="159" column="32" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#22#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_1/department_management.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_5/order_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2109">
+          <caret line="111" column="95" selection-start-line="111" selection-start-column="95" selection-end-line="111" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_2/ProductDetails.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/erp_1/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_2/product_management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/erp_1/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_1/material_management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="90" column="47" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/erp_1/add_materials.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="39" column="61" selection-start-line="39" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/erp_1/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="260" column="13" lean-forward="true" selection-start-line="260" selection-start-column="13" selection-end-line="260" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/PyInstaller/compat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="369" selection-start-line="369" selection-end-line="369" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/static/js/Chart.js/test/core.scaleService.tests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/pywin32-226.dist-info/WHEEL">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/pywin32-226.dist-info/INSTALLER">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/service.py" />
+    <entry file="file://$PROJECT_DIR$/erp/service.ini" />
+    <entry file="file://$PROJECT_DIR$/erp/template/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/template/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="49" column="19" lean-forward="true" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/build/manage/manage.exe.manifest" />
+    <entry file="file://$PROJECT_DIR$/erp/build/manage/warn-manage.txt" />
+    <entry file="file://$PROJECT_DIR$/erp/dist/manage/erp/settings.py" />
+    <entry file="file://$PROJECT_DIR$/erp/dist/manage/django/shortcuts.py" />
+    <entry file="file://$PROJECT_DIR$/erp/erp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding>
+            <element signature="e#627#659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/manage.spec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/erp/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,105 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+新增申请
+{% endblock %}
+
+{% block content %}
+<div class="right_col" role="main">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+
+                  <div class="x_title">
+                    <h2>新增申请单<small>需要提货申请权限</small></h2>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="x_content">
+                    <br>
+                    <form id="add" name="add" class="form-horizontal form-label-left" method="post" action=".">
+
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="io">出/入标记
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="io" required="required" class="form-control col-md-7 col-xs-12" name="io" value="出库" readonly="readonly">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >产品名称
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select form="add" id="goods_name" class="form-control select2_group form-control" required="" name="goods_name">
+                            {% for order in product %}
+                            <option value="{{order.name}}">{{order.name}}</option>
+                            {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="demand">数量
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="demand" required="required" class="form-control col-md-7 col-xs-12" name="demand">
+                        </div>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="date_app">申请日期
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="date" id="date_app" required="required" class="form-control col-md-7 col-xs-12" name="date_app">
+                        </div>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="date_io">交货日期
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="date" id="date_io" required="required" class="form-control col-md-7 col-xs-12" name="date_io">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >申请人
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select form="add" class="form-control select2_group form-control" required="" name="applicant">
+                            {% for order in applicant %}
+                            <option value="{{order.name}}">{{order.name}}  id:{{order.id}}</option>
+                            {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="state">确认状态
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="state" required="required" class="form-control col-md-7 col-xs-12" name="state" value="否" readonly="readonly">
+                        </div>
+                      </div>
+
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <a class="btn btn-primary" href="{% url 'App' %}">取消</a>
+						    <button class="btn btn-primary" type="reset">重置</button>
+                            <button type="submit" class="btn btn-success">提交</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "frame.html" %}
+{% block title %}供货信息
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+<div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>供货信息 </h2>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="detail" class="form-horizontal form-label-left" method="post" name="detail">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material.id">物料编码
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="material.id" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12" name="id" value="{{supply.material.id}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material.name">物料名称
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="material.name" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12" value="{{supply.material.name}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="material.specification">物料规格
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="material.specification" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12" value="{{supply.material.specification}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="supplier.name">供货商名称
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="supplier.name" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12" value="{{supply.supplier.name}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price">报价
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="price" required="required" class="form-control col-md-7 col-xs-12" value="{{supply.price}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tran_price">运费
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="tran_price" required="required" class="form-control col-md-7 col-xs-12" value="{{supply.tran_price}}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rate">合格率
+                          </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name" name="rate" required="required" class="form-control col-md-7 col-xs-12" value="{{supply.rate}}">
+                        </div>
+                      </div>
+{#                      <div class="form-group">#}
+{#                        <label class="control-label col-md-3 col-sm-3 col-xs-12">性别</label>#}
+{#                        <div class="col-md-6 col-sm-6 col-xs-12">#}
+{#                          {% if gender_flag %}#}
+{#                          <input type="radio" class="flat" name="gender" checked="True" value="男" /> 男#}
+{#                          <input type="radio" class="flat" name="gender" value="女" /> 女#}
+{#                          {% else %}#}
+{#                          <input type="radio" class="flat" name="gender" value="男" /> 男#}
+{#                          <input type="radio" class="flat" name="gender" checked="True" value="女" /> 女#}
+{#                          {% endif %}#}
+{#                        </div>#}
+{#                      </div>#}
+{##}
+{#                      <div class="form-group">#}
+{#                        <label class="control-label col-md-3 col-sm-3 col-xs-12">在职情况</label>#}
+{#                        <div class="col-md-6 col-sm-6 col-xs-12">#}
+{#                          {% if staff.on_the_job %}#}
+{#                          <input type="radio" class="flat" name="on_the_job" checked="True" value="True" /> 在职#}
+{#                          <input type="radio" class="flat" name="on_the_job" value="False" /> 未在职#}
+{#                          {% else %}#}
+{#                          <input type="radio" class="flat" name="on_the_job" value="True" /> 在职#}
+{#                          <input type="radio" class="flat" name="on_the_job" checked="True" value="False" /> 未在职#}
+{#                          {% endif %}#}
+{#                        </div>#}
+{#                      </div>#}
+{##}
+{#                      <div class="form-group">#}
+{#                        <label class="control-label col-md-3 col-sm-3 col-xs-12">工龄</label>#}
+{#                        <div class="col-md-6 col-sm-6 col-xs-12">#}
+{#                          <input id="seniority" class="form-control col-md-7 col-xs-12" required="required" type="text" name="seniority" value="{{staff.seniority}}">#}
+{#                        </div>#}
+{#                      </div>#}
+{##}
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-primary" type="reset">重置</button>
+                          <button class="btn btn-success" type="button" onclick="act1()">保存</button>
+                          <button class="btn btn-success"  href="{% url 'supply information' %}">取消</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+</div>
+
+<script>
+    function act1(){
+        document.detail.action="{% url 'supply detail' supply.id%}";
+        document.detail.submit();
+    }
+</script>
+{% endblock %}

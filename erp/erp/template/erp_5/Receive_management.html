@@ -1,0 +1,64 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+接收管理
+{% endblock %}
+
+{% block content %}
+    <div class="right_col" role="main">
+
+
+        <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>
+                    <a class="btn btn-sm btn-success btn-block" onclick="no_right({{right}});return false;" href="{% url 'application information' %}">入库申请单管理</a>
+                    </h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    简介
+                   </div>
+                </div>
+              </div>
+         </div>
+
+
+        <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>
+                  <a class="btn btn-sm btn-success btn-block" onclick="no_right({{right}});return false;" href="{% url 'assessment information' %}">收货与评估</a>
+                    </h2>
+                  <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    简介
+                   </div>
+                </div>
+              </div>
+         </div>
+
+
+        <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>
+                  <a class="btn btn-sm btn-success btn-block">退货管理</a>
+                    </h2>
+                  <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    简介
+                   </div>
+                </div>
+              </div>
+         </div>
+
+
+
+        </div>
+{% endblock %}

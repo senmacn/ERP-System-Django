@@ -1,0 +1,50 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+产品信息
+{% endblock %}
+
+{% block content %}
+<div class="right_col" role="main">
+  <div class="x_panel">
+
+      <!--    新增产品-->
+<!--              <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-left">-->
+<!--                <div class="btn-group col-md-5">-->
+<!--                      <a class="btn btn-sm btn-success btn-block" onclick="no_right({{right}});return false;" href="{% url 'add_product' %}">新增产品</a>-->
+<!--                </div>-->
+<!--              </div>-->
+
+
+            <!--表格-->
+            <div class="col-sm-12">
+              <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action dataTable no-footer" role="grid" aria-describedby="datatable-checkbox_info">
+                <thead><tr role="row">
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">编号</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">名称</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">计算成本</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatable-checkbox" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 167px;">基础定价</th>
+                           </tr>
+                </thead>
+                <tbody>
+
+                          {% for people in product %}
+                          <tr>
+                            <td>
+                                <a href="{% url 'ProductDetails' people.id%}" style="color: #953b39;text-decoration: underline #00aeef;">
+                                    {{people.id}}
+                                </a>
+                            </td>
+                            <td>{{people.name}}</td>
+                            <td>{{people.cost}}</td>
+                            <td>{{people.basic_price}}</td>
+                          </tr>
+                          {% endfor %}
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+  </div>
+</div>
+{% endblock %}
